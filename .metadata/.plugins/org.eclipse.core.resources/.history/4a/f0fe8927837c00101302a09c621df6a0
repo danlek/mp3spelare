@@ -1,0 +1,27 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.JFileChooser;
+
+
+public class Controller implements ActionListener
+{
+	private Mp3Filter ff;
+	private JFileChooser fc;
+	public Controller()
+	{
+		ff = new Mp3Filter();
+		fc = new JFileChooser();
+		fc.addChoosableFileFilter(ff);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) 
+	{
+		if(e.getActionCommand() == "open")
+		{
+			fc.showOpenDialog(null);
+		}
+		
+	}
+
+}

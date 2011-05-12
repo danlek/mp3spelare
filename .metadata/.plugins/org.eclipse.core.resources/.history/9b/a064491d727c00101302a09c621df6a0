@@ -1,0 +1,8 @@
+
+public class Mp3Spelare 
+{
+	public static void main()
+	{
+		Viewer vy = new Viewer();
+	}
+}

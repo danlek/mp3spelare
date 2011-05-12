@@ -1,0 +1,58 @@
+import java.util.Observable;
+import java.util.Observer;
+import javax.swing.*;
+
+
+public class Viewer extends JPanel implements Observer 
+{
+	private JFrame frame;
+	private JPanel panel;
+	private JLabel info;
+	private JButton open, play, stop;
+	public Viewer()
+	{
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		frame = new JFrame("Zomg MP3spelare");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(350, 100);
+		frame.setResizable(false);
+		
+		info = new JLabel();
+		
+		open = new JButton("Open");
+		play = new JButton("Play");
+		stop = new JButton("Stop");
+		
+		panel = new JPanel();
+		panel.add(open);
+		panel.add(play);
+		panel.add(stop);
+		panel.add(info);
+		
+		this.add(panel);
+		this.setBackground(java.awt.Color.PINK);
+		frame.add(this);
+		frame.setVisible(true);
+		
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+}
